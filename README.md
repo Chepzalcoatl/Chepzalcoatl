@@ -56,7 +56,7 @@ Based in Mexico · Currently Android Developer at **Globant**.
 
 ### 📫 Let's connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/YOUR-LINKEDIN/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eduardo-barron/)
 [![Email](https://img.shields.io/badge/Email-j.eduardo.barron%40gmail.com-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:j.eduardo.barron@gmail.com)
 
 🇲🇽 Spanish (native) · 🇺🇸 English (advanced)
