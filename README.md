@@ -1,10 +1,13 @@
 # Hi, I'm Eduardo Barrón 👋
 
-**Mobile & Full-Stack Software Engineer** · 11+ years building Android, iOS and cross-platform apps, and the .NET backends behind them.
+**Senior Software Engineer · Mobile & Full-Stack · AI-Powered Apps** · 11+ years building Android, iOS and cross-platform apps, and the .NET backends behind them.
 Based in Mexico · Currently Android Developer at **Globant**.
+
+🗺️ **Take my CV for a drive → [chepzalcoatl.github.io](https://chepzalcoatl.github.io)**
 
 - 📱 Native **Android** (Kotlin, Jetpack Compose, Clean Architecture, MVVM, Hilt) and **iOS** (Swift, SwiftUI), plus **Flutter**
 - 🧩 Full-stack with **ASP.NET Core**, **Blazor**, **Angular** and **Azure**
+- 🤖 **AI:** LLM features on **Azure AI Foundry** and daily agentic development with **Kiro**
 - 🗺️ **Google Maps Platform** specialist: I designed and taught an 8-module Google Maps API course ([course materials](https://github.com/ModemoProjects/GoogleMapsCourse))
 - 🔐 Mobile app security: OWASP Mobile Top 10, pentest and SAST/SCA remediation, reCAPTCHA Enterprise, API key hardening
 - 🚀 I've shipped apps to Google Play and the App Store, set up CI/CD, and led small Scrum teams
@@ -40,22 +43,30 @@ Based in Mexico · Currently Android Developer at **Globant**.
 ![Azure DevOps](https://img.shields.io/badge/Azure%20DevOps-0078D7?style=flat&logo=azuredevops&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 
+**AI**
+![Azure AI Foundry](https://img.shields.io/badge/Azure%20AI%20Foundry-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Agentic AI](https://img.shields.io/badge/Agentic%20AI-0F766E?style=flat)
+![MCP](https://img.shields.io/badge/MCP-0B1F3A?style=flat)
+![Kiro](https://img.shields.io/badge/Kiro-6B4FBB?style=flat)
+
 ---
 
 ### 💼 Selected work
 
 > Most of my professional work lives in private client repositories. Here's what I've built:
 
-- **LetIn** (GOCO Systems): a multi-tenant residential community platform. I built the Android (Compose) and iOS (SwiftUI) resident apps, guard and kiosk apps with QR access control, an Angular admin portal and a .NET 10 API on Azure. Published on Google Play.
+- **LetIn** (GOCO Systems): a multi-tenant residential community platform. I built the Android (Compose) and iOS (SwiftUI) resident apps, guard and kiosk apps with QR access control, an Angular admin portal and a .NET 10 API on Azure with an AI resident assistant. Published on Google Play.
 - **Globant**: Android (Jetpack Compose, MVVM, Hilt) and Flutter (Bloc) features for enterprise clients, including accessibility, feature flags, GraphQL and analytics.
 - **HDI Seguros, Ajustador Móvil**: a digital claim-forms module shared via email and WhatsApp, plus remediation of pentest and SAST/SCA security findings.
 - **FletaMas** (Neodevelop): ERP modules for a logistics platform (accounts receivable and payable, inventory and fleet geolocation) using Blazor and ASP.NET Core.
 - **Google Maps API course**: an 8-module training with Web, Android and Flutter samples. 👉 [ModemoProjects/GoogleMapsCourse](https://github.com/ModemoProjects/GoogleMapsCourse)
+- **Road Trip CV**: my interactive résumé, built as a mobile app with an animated career map. 👉 [chepzalcoatl.github.io](https://chepzalcoatl.github.io) · [source](https://github.com/Chepzalcoatl/Chepzalcoatl.github.io)
 
 ---
 
 ### 📫 Let's connect
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-chepzalcoatl.github.io-0F766E?style=flat&logo=googlemaps&logoColor=white)](https://chepzalcoatl.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eduardo-barron/)
 [![Email](https://img.shields.io/badge/Email-j.eduardo.barron%40gmail.com-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:j.eduardo.barron@gmail.com)
 
