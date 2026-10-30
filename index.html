@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Eduardo Barrón · Road Trip CV</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="José Eduardo Barrón Bravo · Senior Software Engineer · Mobile & Full-Stack">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: desktop = intro column + a phone running the CV as an app; phone = the app full screen. */
+:root{
+  --bg:#eef2f4; --surface:#ffffff; --surface-2:#f4f7f8; --ink:#0b1f3a; --ink-2:#4a5a6e; --line:#d6dee4;
+  --accent:#0f766e; --accent-2:#2563eb; --accent-soft:#d5f0ec; --road:#c9d4dc; --land:#e3eae4; --land-2:#d8e3da; --water:#d6e6f2;
+  --phone:#0b1f3a; --pin-ink:#ffffff;
+  --display:"Sora","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#070d18; --surface:#0d1729; --surface-2:#122038; --ink:#e7eef6; --ink-2:#9fb0c4; --line:#22324c;
+  --accent:#2dd4bf; --accent-2:#60a5fa; --accent-soft:#0f3b3a; --road:#2a3b57; --land:#0f1c30; --land-2:#13233b; --water:#0c2340;
+  --phone:#1d2b44; --pin-ink:#06121f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#070d18; --surface:#0d1729; --surface-2:#122038; --ink:#e7eef6; --ink-2:#9fb0c4; --line:#22324c;
+  --accent:#2dd4bf; --accent-2:#60a5fa; --accent-soft:#0f3b3a; --road:#2a3b57; --land:#0f1c30; --land-2:#13233b; --water:#0c2340;
+  --phone:#1d2b44; --pin-ink:#06121f; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+*{box-sizing:border-box}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-block:40px;display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:64px;align-items:center;min-height:100%}
+/* intro column */
+.intro{display:flex;flex-direction:column;gap:22px;min-width:0}
+.coords{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2);text-transform:uppercase}
+.intro h1{font-family:var(--display);font-size:clamp(34px,4.4vw,52px);line-height:1.04;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.intro h1 span{color:var(--accent)}
+.intro p{margin:0;max-width:52ch;color:var(--ink-2);font-size:16.5px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:12.5px;color:var(--ink-2)}
+.legend kbd{font-family:var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:var(--surface);color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:600 14px/1 var(--body);padding:12px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover{border-color:var(--accent)}
+/* phone */
+.phone{width:400px;height:820px;max-height:calc(100vh - 40px);min-height:640px;background:var(--phone);border-radius:52px;padding:12px;box-shadow:0 30px 70px -30px rgba(11,31,58,.55),inset 0 0 0 2px rgba(255,255,255,.06);position:relative}
+.screen{width:100%;height:100%;border-radius:40px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column;position:relative}
+.status{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 6px;font:600 13px var(--body);color:var(--ink)}
+.status .notch{width:110px;height:28px;background:var(--phone);border-radius:20px}
+.appbar{display:flex;align-items:center;gap:12px;padding:8px 18px 12px;border-bottom:1px solid var(--line)}
+.appbar img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.appbar b{font:600 15px var(--display);display:block;line-height:1.2}
+.appbar small{color:var(--ink-2);font-size:12.5px}
+.views{flex:1;position:relative;overflow:hidden}
+.view{position:absolute;inset:0;overflow-y:auto;padding:16px 18px 24px}
+.view[hidden]{display:none!important}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);background:var(--surface);padding:6px 6px calc(10px + env(safe-area-inset-bottom,0px))}
+.tab{background:none;border:0;color:var(--ink-2);font:500 11px var(--body);display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;cursor:pointer;border-radius:12px}
+.tab svg{width:22px;height:22px}
+.tab[aria-selected="true"]{color:var(--accent)}
+.tab[aria-selected="true"] .ic{background:var(--accent-soft)}
+.ic{display:grid;place-items:center;width:52px;height:28px;border-radius:14px;transition:background .2s}
+/* journey */
+#journey{padding:0;overflow:hidden}
+.map{position:absolute;inset:0}
+.map svg{width:100%;height:auto;display:block;position:absolute;left:0;top:0;will-change:transform}
+.hud{position:absolute;top:10px;left:12px;right:12px;display:flex;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:11px;color:var(--ink-2);pointer-events:none}
+.hud span{background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--line);padding:4px 8px;border-radius:8px}
+.sheet{position:absolute;left:10px;right:10px;bottom:10px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:14px 16px 12px;box-shadow:0 12px 30px -16px rgba(11,31,58,.5)}
+.sheet .when{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+.sheet h2{font:600 18px/1.2 var(--display);margin:2px 0 2px}
+.sheet .role{font-size:13.5px;color:var(--ink-2);margin:0 0 8px}
+.sheet ul{margin:0 0 10px;padding-left:18px;font-size:13.5px;display:grid;gap:3px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 11.5px var(--mono);padding:3px 8px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
+.nav button{font:600 13px var(--body);border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:8px 12px;cursor:pointer}
+.nav button.go{background:var(--accent);color:var(--pin-ink);border-color:var(--accent)}
+.nav button:disabled{opacity:.4;cursor:default}
+.dots{display:flex;gap:4px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--road)}
+.dots i.on{background:var(--accent);width:16px;border-radius:3px}
+/* lists */
+.h{font:600 20px var(--display);margin:4px 0 12px}
+.sub{color:var(--ink-2);font-size:13.5px;margin:-6px 0 14px}
+.job{padding:12px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0}
+.job .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.job b{font:600 15px var(--display)}
+.job .d{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);white-space:nowrap}
+.job .r{color:var(--accent);font-size:13px;font-weight:600;margin:2px 0 6px}
+.job ul{margin:0;padding-left:18px;font-size:13.5px;display:grid;gap:3px}
+.card{border:1px solid var(--line);border-radius:16px;padding:14px;background:var(--surface-2);margin-bottom:12px}
+.card h3{font:600 16px var(--display);margin:0 0 2px}
+.card .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);margin-bottom:8px}
+.card p{margin:0 0 10px;font-size:13.5px}
+.group{margin-bottom:14px}
+.group h4{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);margin:0 0 8px}
+.contact{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding-top:8px}
+.contact img{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--accent-soft)}
+.contact h3{font:600 20px var(--display);margin:4px 0 0}
+.rows{width:100%;display:grid;gap:8px;margin-top:6px;text-align:left}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface-2);min-width:0}
+.row span{font-size:13.5px;overflow-wrap:anywhere;min-width:0}
+.row small{display:block;font-family:var(--mono);font-size:11px;color:var(--ink-2)}
+.row button,.row a.k{flex:none;font:600 12.5px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer;text-decoration:none}
+.toast{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:13px;padding:8px 12px;border-radius:10px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+/* phone-sized screens: the app is the page */
+@media (max-width:860px){
+  body{padding-left:0;padding-right:0}
+  .wrap{display:block;padding:0;min-height:0;height:100%}
+  .intro{display:none}
+  .phone{width:100%;height:100%;max-height:none;min-height:0;border-radius:0;padding:0;background:none;box-shadow:none}
+  .screen{border-radius:0}
+  .status{display:none}
+  .appbar{padding:12px max(16px,env(safe-area-inset-left,0px)) 12px max(16px,env(safe-area-inset-right,0px))}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <section class="intro" aria-label="Introduction">
+    <div class="coords">21.12° N · 101.68° W → 20.67° N · 103.35° W · 11+ years on the road</div>
+    <h1>José Eduardo Barrón<br><span>Senior Software Engineer</span></h1>
+    <p>Mobile &amp; Full-Stack: Android, iOS and Flutter apps, and the .NET, Angular and Azure systems behind them. My career is a road trip, so take the app on the right for a drive.</p>
+    <div class="legend"><span><kbd>←</kbd> <kbd>→</kbd> drive between stops</span><span>Tabs: experience, projects, skills, contact</span></div>
+    <div class="cta">
+      <a class="btn primary" href="cv/Jose_Eduardo_Barron_CV_Mobile.pdf" target="_blank" rel="noopener">CV · Mobile (PDF)</a>
+      <a class="btn" href="cv/Jose_Eduardo_Barron_CV_FullStack.pdf" target="_blank" rel="noopener">CV · Full-Stack (PDF)</a>
+      <a class="btn" href="https://www.linkedin.com/in/eduardo-barron/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Chepzalcoatl" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <div class="phone">
+    <div class="screen">
+      <div class="status" aria-hidden="true"><span id="clock">9:41</span><span class="notch"></span><span>5G ▮▮▮</span></div>
+      <header class="appbar">
+        <img src="data:image/jpeg;base64,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" alt="Eduardo Barrón">
+        <div><b>Eduardo Barrón</b><small>Senior Software Engineer · Mobile &amp; Full-Stack</small></div>
+      </header>
+      <main class="views">
+        <section class="view" id="journey" aria-label="Career journey">
+          <div class="map" id="map"></div>
+          <div class="hud"><span id="odo">ODO 0 km</span><span id="eta">STOP 1 / 10</span></div>
+          <article class="sheet" aria-live="polite">
+            <div class="when" id="s-when"></div>
+            <h2 id="s-name"></h2>
+            <p class="role" id="s-role"></p>
+            <ul id="s-points"></ul>
+            <div class="chips" id="s-chips"></div>
+            <div class="nav">
+              <button type="button" id="prev" aria-label="Previous stop">← Back</button>
+              <div class="dots" id="dots" aria-hidden="true"></div>
+              <button type="button" id="next" class="go" aria-label="Next stop">Drive →</button>
+            </div>
+          </article>
+        </section>
+        <section class="view" id="experience" aria-label="Experience" hidden></section>
+        <section class="view" id="projects" aria-label="Projects" hidden></section>
+        <section class="view" id="skills" aria-label="Skills" hidden></section>
+        <section class="view" id="contact" aria-label="Contact" hidden></section>
+        <div class="toast" id="toast" role="status"></div>
+      </main>
+      <nav class="tabs" role="tablist" aria-label="Sections">
+        <button class="tab" role="tab" data-v="journey" aria-selected="true"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg></span>Journey</button>
+        <button class="tab" role="tab" data-v="experience" aria-selected="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>Work</button>
+        <button class="tab" role="tab" data-v="projects" aria-selected="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>Projects</button>
+        <button class="tab" role="tab" data-v="skills" aria-selected="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>Skills</button>
+        <button class="tab" role="tab" data-v="contact" aria-selected="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>Contact</button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script>
+const STOPS=[
+ {when:"Dec 2014 – Sep 2016",name:"Innotek",place:"León, GTO",role:"Android & Web Developer",pts:["Built native Android apps from scratch in Java","Google Maps, Analytics and geocoding for routes","Web modules with PHP, jQuery and REST + MySQL"],chips:["Java","Android","Google Maps"]},
+ {when:"Oct 2016 – Nov 2017",name:"Inceptio",place:"León, GTO",role:"Xamarin Developer",pts:["Cross-platform Android and iOS apps with MVP","REST services in .NET, published on Azure","Full release cycle on Google Play and the App Store"],chips:["Xamarin","C#","Azure"]},
+ {when:"Dec 2017 – Aug 2019",name:"Synergy Systems",place:"León, GTO",role:"iOS Developer → Tech Lead → Innovation Architect",pts:["iOS (Swift) apps with OCR and Firebase","BLE beacons, AWS SMS, chatbot and GraphQL PoC","Published Flutter apps to both stores"],chips:["Swift","Flutter","AWS"]},
+ {when:"Sep 2019 – Oct 2021",name:"Neodevelop",place:"León, GTO",role:"Android Developer → Tech Lead",pts:["Introduced Scrum and CI/CD in Azure DevOps","Centralized multi-app login in .NET + Angular","BLE printers, barcode scanners and Jetpack"],chips:["Kotlin","Azure DevOps","Angular"]},
+ {when:"Oct 2021 – Present",name:"Globant",place:"Guadalajara, JAL",role:"Android & Flutter Developer",pts:["Jetpack Compose with MVVM, Clean Architecture and Hilt","GraphQL, analytics and Splunk dashboards","Accessibility, feature flags and biometric login"],chips:["Jetpack Compose","Flutter","GraphQL"]},
+ {when:"Feb 2024 – Oct 2026",name:"GOCO Systems · LetIn",place:"Remote",role:"Full-Stack Developer (contractor)",pts:["Android + iOS resident apps, v1.0.0 on Google Play","Guard and kiosk apps that open gates via QR","Angular portal and .NET 10 API on Azure, AI assistant"],chips:["SwiftUI","ASP.NET Core","Azure AI Foundry"]},
+ {when:"2024 – 2025",name:"HDI Seguros",place:"Remote",role:"Android Developer (contractor)",pts:["Digital claim forms shared via email and WhatsApp","Fixed OWASP pentest and SAST/SCA findings","reCAPTCHA Enterprise and API key hardening"],chips:["Android","Security","OWASP"]},
+ {when:"2025",name:"SATEG",place:"Guanajuato",role:"Google Maps API Instructor",pts:["Designed and taught an 8-module course","Places, Directions, styling, clustering, security","Samples for Web, Android and Flutter"],chips:["Google Maps","Teaching"]},
+ {when:"Apr 2026 – Sep 2026",name:"Neodevelop · FletaMas",place:"Remote",role:"Full-Stack .NET Developer (contractor)",pts:["Accounts receivable and payable modules","Inventory per warehouse with reorder alerts","Fleet GPS tracking and geofences on Google Maps"],chips:["Blazor","SQL Server","Google Maps"]},
+ {when:"Next stop",name:"Your team",place:"Anywhere · Remote",role:"Senior Mobile / Full-Stack Engineer",pts:["Ready to build your next app or platform","Android · iOS · Flutter · .NET · Angular · Azure","Open the Contact tab to start the conversation"],chips:["Open to work"],last:true}
+];
+const JOBS=[
+ {n:"Globant",d:"2021 – now",r:"Android & Flutter Developer · Guadalajara",b:["Jetpack Compose and custom views with MVVM, Clean Architecture and Hilt","GraphQL and Contentstack, analytics and Splunk monitoring dashboards","Accessibility, feature flags, flaky-test fixes and biometric login","Flutter: Bloc, freezed, Firestore and Google Maps with live geolocation"]},
+ {n:"GOCO Systems · LetIn",d:"2024 – 2026",r:"Full-Stack Developer · contractor",b:["Resident apps for Android (Compose) and iOS (SwiftUI); v1.0.0 on Google Play","Guard and kiosk apps with CameraX + ML Kit QR that open gates over LAN","Angular + PrimeNG portal and ASP.NET Core API with EF Core and MySQL","AI resident assistant on Azure AI Foundry; Bicep, Key Vault, CI"]},
+ {n:"Neodevelop · FletaMas",d:"2026",r:"Full-Stack .NET Developer · contractor",b:["Accounts receivable dashboard with credit risk and aging","Accounts payable, inventory and purchase-order reception","Fleet GPS tracking and geofences on Google Maps"]},
+ {n:"SATEG",d:"2025",r:"Google Maps API Instructor · freelance",b:["8-module Google Maps Platform course with Web, Android and Flutter samples"]},
+ {n:"HDI Seguros",d:"2024 – 2025",r:"Android Developer · contractor",b:["Digital claim-forms module shared via email and WhatsApp","Remediated pentest and Checkmarx SAST/SCA findings","reCAPTCHA Enterprise and Google Maps API key hardening"]},
+ {n:"Neodevelop",d:"2019 – 2021",r:"Tech Lead · Android Developer · León",b:["Scrum, CI/CD in Azure DevOps and MDM app distribution","Centralized multi-application login in C#/.NET and Angular on Azure","BLE printers, barcode scanners and Google Maps tracking"]},
+ {n:"Synergy Systems",d:"2017 – 2019",r:"Innovation Architect · Tech Lead · iOS Developer",b:["iOS (Swift) with OCR and Firebase; Flutter apps to both stores","BLE beacons, AWS SMS, chatbot, GraphQL PoC, .NET and Spring APIs"]},
+ {n:"Earlier",d:"2014 – 2017",r:"Inceptio · Innotek",b:["Xamarin apps with MVP and .NET services on Azure","Native Android apps in Java with Google Maps and web modules"]}
+];
+const PROJECTS=[
+ {t:"LetIn",m:"Residential community platform · 2024 – 2026",p:"Multi-tenant SaaS for residents, guards and administrators: mobile, kiosk, desktop and web apps over a .NET 10 API on Azure, with an AI resident assistant.",c:["Kotlin","SwiftUI","Angular","ASP.NET Core","Azure"]},
+ {t:"FletaMas",m:"Logistics ERP · 2026",p:"Accounts receivable and payable, inventory and fleet geolocation modules for a transportation platform.",c:["Blazor","EF Core","SQL Server","Google Maps"]},
+ {t:"Ajustador Móvil",m:"HDI Seguros · 2024 – 2025",p:"Digital claim forms that replaced handwritten paper, plus a security hardening pass after a mobile pentest.",c:["Android","OWASP","reCAPTCHA"]},
+ {t:"Google Maps API Course",m:"SATEG · 2025",p:"An 8-module course from fundamentals to production best practices, with runnable samples.",c:["JavaScript","Kotlin","Flutter"],href:"https://github.com/ModemoProjects/GoogleMapsCourse"},
+ {t:"Multi-app Login",m:"Neodevelop · 2020",p:"Centralized user management issuing tokens for every app of a client, deployed to Azure.",c:["C#","Angular","Azure"]}
+];
+const SKILLS=[
+ ["Mobile",["Kotlin","Jetpack Compose","Coroutines","Hilt","Swift","SwiftUI","Flutter","Dart"]],
+ ["Backend & Web",["C#","ASP.NET Core",".NET 10","EF Core","REST","GraphQL","Angular","TypeScript","Blazor"]],
+ ["Cloud & Data",["Azure","Azure DevOps","Bicep","Firebase","SQL Server","MySQL"]],
+ ["AI",["Agentic AI","Azure AI Foundry","MCP","Kiro"]],
+ ["Architecture",["Clean Architecture","MVVM","SOLID","Design Patterns"]],
+ ["Maps & Security",["Google Maps Platform","Geofencing","OWASP Mobile","reCAPTCHA Enterprise"]]
+];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const chips=a=>a.map(c=>`<span class="chip">${esc(c)}</span>`).join("");
+
+/* ---- map ---- */
+const W=360,H=640;
+const PTS=[[70,560],[190,520],[300,470],[250,390],[110,350],[80,265],[200,225],[310,170],[220,105],[95,60]];
+function buildMap(){
+  const blocks=[];let seed=7;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+  for(let i=0;i<34;i++){const x=rnd()*W,y=rnd()*H,w=20+rnd()*60,h=14+rnd()*40;blocks.push(`<rect x="${x.toFixed(0)}" y="${y.toFixed(0)}" width="${w.toFixed(0)}" height="${h.toFixed(0)}" rx="6" fill="var(${rnd()>.5?'--land-2':'--land'})"/>`)}
+  let d=`M${PTS[0][0]} ${PTS[0][1]}`;
+  for(let i=1;i<PTS.length;i++){const [x0,y0]=PTS[i-1],[x1,y1]=PTS[i];const my=(y0+y1)/2;d+=` C${x0} ${my},${x1} ${my},${x1} ${y1}`}
+  const grid=[];for(let x=30;x<W;x+=60)grid.push(`<line x1="${x}" y1="0" x2="${x}" y2="${H}"/>`);for(let y=40;y<H;y+=60)grid.push(`<line x1="0" y1="${y}" x2="${W}" y2="${y}"/>`);
+  const pins=PTS.map(([x,y],i)=>`<g class="pin" data-i="${i}" tabindex="-1" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="13" fill="var(--surface)" stroke="var(${STOPS[i].last?'--accent-2':'--accent'})" stroke-width="3"/><text x="${x}" y="${y+4}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="var(--ink)">${STOPS[i].last?'★':i+1}</text><text x="${x+(x>200?-20:20)}" y="${y+4}" text-anchor="${x>200?'end':'start'}" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="var(--ink-2)">${esc(STOPS[i].name.split(' · ')[0])}</text></g>`).join("");
+  $("#map").innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Map of career stops">
+   <rect width="${W}" height="${H}" fill="var(--surface-2)"/>
+   <path d="M0 300 C80 280,120 330,200 310 S330 280,${W} 300 L${W} 340 C300 330,260 360,190 350 S60 320,0 345Z" fill="var(--water)"/>
+   ${blocks.join("")}
+   <g stroke="var(--line)" stroke-width="1" opacity=".6">${grid.join("")}</g>
+   <path id="road" d="${d}" fill="none" stroke="var(--road)" stroke-width="12" stroke-linecap="round"/>
+   <path d="${d}" fill="none" stroke="var(--surface)" stroke-width="1.5" stroke-dasharray="6 8" opacity=".9"/>
+   <path id="trail" d="${d}" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
+   ${pins}
+   <g id="car"><circle r="10" fill="var(--accent)"/><path d="M-4 3 0 -5 4 3Z" fill="var(--pin-ink)"/></g>
+   <g transform="translate(16 ${H-36})" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-2)"><rect width="60" height="3" fill="var(--ink-2)"/><text y="14">1 YEAR ≈ 60 px</text></g>
+  </svg>`;
+}
+let road,trail,car,len,stopLen=[],cur=0,anim=null;
+function initRoad(){
+  road=$("#road");trail=$("#trail");car=$("#car");len=road.getTotalLength();
+  trail.style.strokeDasharray=len;trail.style.strokeDashoffset=len;
+  // length along the road for each stop
+  let acc=0;stopLen=[0];const n=400;let prev=road.getPointAtLength(0),k=1;
+  for(let i=1;i<=n;i++){const L=len*i/n,p=road.getPointAtLength(L);acc=L;
+    if(k<PTS.length&&Math.hypot(p.x-PTS[k][0],p.y-PTS[k][1])<3){stopLen[k]=L;k++}prev=p}
+  for(let i=k;i<PTS.length;i++)stopLen[i]=len*(i/(PTS.length-1));
+  stopLen[PTS.length-1]=len;
+  document.querySelectorAll(".pin").forEach(g=>g.addEventListener("click",()=>go(+g.dataset.i)));
+}
+function place(L){
+  const p=road.getPointAtLength(L),q=road.getPointAtLength(Math.min(len,L+1));
+  const a=Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI+90;
+  car.setAttribute("transform",`translate(${p.x} ${p.y}) rotate(${a})`);
+  trail.style.strokeDashoffset=len-L;
+  pan(p.y);
+  $("#odo").textContent=`ODO ${Math.round(L*7.3).toLocaleString("en-US")} km`;
+}
+function pan(y){
+  const svg=$("#map svg"),box=$("#map"),sheet=$(".sheet");if(!svg)return;
+  const sc=box.clientWidth/W,vis=box.clientHeight-sheet.offsetHeight-20,top=44;
+  let off=top+(vis-top)*0.5-y*sc;const min=vis-H*sc;off=Math.min(0,Math.max(min,off));
+  svg.style.transform=`translateY(${off}px)`;
+}
+addEventListener("resize",()=>place(stopLen[cur]??0));
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function go(i){
+  i=Math.max(0,Math.min(STOPS.length-1,i));
+  const from=stopLen[cur]??0,to=stopLen[i];cur=i;render();
+  if(anim)cancelAnimationFrame(anim);
+  if(reduce){place(to);return}
+  const t0=performance.now(),dur=Math.min(1400,300+Math.abs(to-from)*3);
+  const step=t=>{const k=Math.min(1,(t-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;place(from+(to-from)*e);if(k<1)anim=requestAnimationFrame(step)};
+  anim=requestAnimationFrame(step);
+}
+function render(){
+  const s=STOPS[cur];
+  $("#s-when").textContent=`${s.when} · ${s.place}`;$("#s-name").textContent=s.name;$("#s-role").textContent=s.role;
+  $("#s-points").innerHTML=s.pts.map(p=>`<li>${esc(p)}</li>`).join("");$("#s-chips").innerHTML=chips(s.chips);
+  $("#eta").textContent=s.last?"DESTINATION":`STOP ${cur+1} / ${STOPS.length}`;
+  $("#prev").disabled=cur===0;
+  const nx=$("#next");nx.textContent=s.last?"Contact →":(cur===0?"Start driving →":"Drive →");
+  $("#dots").innerHTML=STOPS.map((_,i)=>`<i class="${i===cur?'on':''}"></i>`).join("");
+  document.querySelectorAll(".pin circle").forEach((c,i)=>c.setAttribute("fill",i<=cur?"var(--accent-soft)":"var(--surface)"));
+}
+$("#prev").addEventListener("click",()=>go(cur-1));
+$("#next").addEventListener("click",()=>STOPS[cur].last?show("contact"):go(cur+1));
+document.addEventListener("keydown",e=>{if(currentView!=="journey"||e.target.closest("input,textarea"))return;
+  if(e.key==="ArrowRight"||e.key==="ArrowUp"){e.preventDefault();go(cur+1)}if(e.key==="ArrowLeft"||e.key==="ArrowDown"){e.preventDefault();go(cur-1)}});
+// swipe on the map
+let sx=null;$("#map").addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+$("#map").addEventListener("touchend",e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));sx=null},{passive:true});
+
+/* ---- other views ---- */
+$("#experience").innerHTML=`<h2 class="h">Experience</h2><p class="sub">11+ years across mobile and full-stack.</p>`+JOBS.map(j=>`<div class="job"><div class="top"><b>${esc(j.n)}</b><span class="d">${esc(j.d)}</span></div><div class="r">${esc(j.r)}</div><ul>${j.b.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("");
+$("#projects").innerHTML=`<h2 class="h">Projects</h2><p class="sub">Selected work, most of it in private client repos.</p>`+PROJECTS.map(p=>`<div class="card"><h3>${esc(p.t)}</h3><div class="meta">${esc(p.m)}</div><p>${esc(p.p)}</p><div class="chips">${chips(p.c)}</div>${p.href?`<p style="margin:10px 0 0"><a href="${p.href}" target="_blank" rel="noopener">View on GitHub →</a></p>`:""}</div>`).join("");
+$("#skills").innerHTML=`<h2 class="h">Skills</h2><p class="sub">What I use day to day.</p>`+SKILLS.map(([g,a])=>`<div class="group"><h4>${esc(g)}</h4><div class="chips">${chips(a)}</div></div>`).join("")+`<div class="group"><h4>Languages</h4><div class="chips">${chips(["Spanish · native","English · advanced"])}</div></div>`;
+const photo=document.querySelector(".appbar img").src;
+$("#contact").innerHTML=`<div class="contact"><img src="${photo}" alt="Eduardo Barrón"><h3>José Eduardo Barrón Bravo</h3><p class="sub" style="margin:0">Senior Software Engineer · Mexico · Open to remote</p>
+<div class="rows">
+ <div class="row"><span><small>Email</small>j.eduardo.barron@gmail.com</span><button type="button" data-copy="j.eduardo.barron@gmail.com">Copy</button></div>
+ <div class="row"><span><small>Phone · WhatsApp</small>+52 477 264 7260</span><button type="button" data-copy="+524772647260">Copy</button></div>
+ <div class="row"><span><small>LinkedIn</small>linkedin.com/in/eduardo-barron</span><a class="k" href="https://www.linkedin.com/in/eduardo-barron/" target="_blank" rel="noopener">Open</a></div>
+ <div class="row"><span><small>GitHub</small>github.com/Chepzalcoatl</span><a class="k" href="https://github.com/Chepzalcoatl" target="_blank" rel="noopener">Open</a></div>
+ <div class="row"><span><small>Résumé</small>Mobile version (PDF)</span><a class="k" href="cv/Jose_Eduardo_Barron_CV_Mobile.pdf" target="_blank" rel="noopener">Open</a></div>
+ <div class="row"><span><small>Résumé</small>Full-Stack version (PDF)</span><a class="k" href="cv/Jose_Eduardo_Barron_CV_FullStack.pdf" target="_blank" rel="noopener">Open</a></div>
+</div></div>`;
+function toast(t){const el=$("#toast");el.textContent=t;el.classList.add("on");setTimeout(()=>el.classList.remove("on"),1600)}
+$("#contact").addEventListener("click",e=>{const b=e.target.closest("[data-copy]");if(!b)return;const v=b.dataset.copy;
+  Promise.resolve().then(()=>navigator.clipboard.writeText(v)).then(()=>toast("Copied")).catch(()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r);toast("Selected, press Ctrl/Cmd + C")})});
+
+/* ---- tabs ---- */
+let currentView="journey";
+function show(v){currentView=v;document.querySelectorAll(".view").forEach(s=>s.hidden=s.id!==v);
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.v===v));
+  if(location.hash!=="#"+v&&v!=="journey")history.replaceState(null,"","#"+v);else if(v==="journey"&&location.hash)history.replaceState(null,"",location.pathname+location.search);
+  try{localStorage.setItem("cv-tab",v)}catch(e){}}
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>show(t.dataset.v)));
+window.addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(document.getElementById(h)?.classList.contains("view"))show(h)});
+
+/* ---- boot ---- */
+buildMap();initRoad();render();place(0);
+const h=location.hash.slice(1);if(h&&document.getElementById(h)?.classList.contains("view"))show(h);
+const tick=()=>{const d=new Date();$("#clock").textContent=d.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"}).replace(/\s?[AP]M/,"")};tick();setInterval(tick,30000);
+</script>
+
+</body>
+</html>
